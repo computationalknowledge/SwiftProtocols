@@ -1,0 +1,21 @@
+// https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
+
+protocol StudentRecord {
+    var StudentName: String { get set }
+    var GPA: Double { get }
+}
+
+class Student:StudentRecord{
+    init(a:String, b:Double) {
+        StudentName = a
+        GPA = b
+    }
+    func PrintRecord()->String{
+        return StudentName+";"+String(GPA)
+    }
+    var StudentName: String  
+    var GPA: Double  
+}
+
+let x = Student(a:"Jill", b:4)
+print(x.PrintRecord())
